@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VirusCare | Facility Management</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="brand">✚ VirusCare <small>Patient Monitoring &amp; Quarantine Management</small></div><div><span id="date"></span> <span id="userTag"></span> <button id="logout" class="light hidden">Sign out</button></div></header>
+<main>
+<section id="login" class="login card"><p class="eyebrow">FACILITY OPERATIONS</p><h1>One shared view of every patient's daily care.</h1><p class="muted">Choose a demo role to explore its workspace.</p><label>Role</label><select id="role"><option>Nurse</option><option>Doctor</option><option>Admin</option></select><label>Display name</label><input id="name" value="Demo User"><button id="enter">Enter workspace →</button><p class="tiny">Demo only. Do not enter real patient information.</p></section>
+<section id="app" class="hidden"><div class="heading"><div><p class="eyebrow" id="roleTitle"></p><h1 id="pageTitle">Dashboard</h1><p class="muted" id="subtitle"></p></div><span class="pill blue">74 bed capacity</span></div><nav id="nav"></nav><div id="toast" class="toast hidden"></div><div id="content"></div></section>
+<footer>VirusCare prototype · Sample records · Browser-local storage · Not for clinical use</footer>
+</main>
+<dialog id="patientDialog"><form id="patientForm"><h2>Register patient</h2><label>Full name</label><input id="pname" required maxlength="80"><label>Age</label><input id="page" type="number" min="0" max="120" required><label>Admission date</label><input id="admitDate" type="date" required><div class="actions"><button type="button" class="light" data-close="patientDialog">Cancel</button><button>Register</button></div></form></dialog>
+<dialog id="visitDialog"><form id="visitForm"><h2>Complete doctor visit</h2><p id="visitPatient" class="muted"></p><input id="visitId" type="hidden"><label>Treatment / observation notes</label><textarea id="visitNotes" rows="4" maxlength="1000"></textarea><div class="actions"><button type="button" class="light" data-close="visitDialog">Cancel</button><button>Save visit</button></div></form></dialog>
+<dialog id="deathDialog"><form id="deathForm"><h2>Record death outcome</h2><p id="deathPatient" class="muted"></p><input id="deathId" type="hidden"><label>Date</label><input id="deathDate" type="date" required><div class="actions"><button type="button" class="light" data-close="deathDialog">Cancel</button><button class="danger">Save outcome</button></div></form></dialog>
+<script src="app.js"></script></body></html>
